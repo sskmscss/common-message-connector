@@ -17,7 +17,6 @@ import java.io.Closeable
 import java.util.concurrent.CopyOnWriteArrayList
 
 @EnableKafka
-@Component
 class KafkaMessageProvider(private val configProperties: ConfigProperties) : AbstractMessageProvider(), Closeable {
     private var producerFactory: DefaultKafkaProducerFactory<String, Any>? = null
     private val messages: CopyOnWriteArrayList<String> = CopyOnWriteArrayList<String>()

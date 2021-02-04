@@ -3,7 +3,9 @@ package com.tcs.integration.common.configuration
 import com.tcs.integration.common.messageProvider.AbstractMessageProvider
 import com.tcs.integration.common.messageProvider.kafka.KafkaMessageProvider
 import com.tcs.integration.common.messageProvider.um.UMMessageProvider
+import com.tcs.integration.common.messageProvider.webm.WebMethodsTopicProvider
 import org.springframework.beans.factory.annotation.Qualifier
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import javax.annotation.PreDestroy
@@ -24,6 +26,13 @@ class MessagingConfiguration(private val configProperties: ConfigProperties) {
     fun messageProviderUM(): AbstractMessageProvider {
         println("UMMessageProvider")
         return UMMessageProvider(configProperties)
+    }
+
+    @Bean
+    @Qualifier("webm")
+    fun messageProviderWEBMTOPIC(): AbstractMessageProvider {
+        println("WebMethodsTopicProvider")
+        return WebMethodsTopicProvider(configProperties)
     }
 
     @PreDestroy

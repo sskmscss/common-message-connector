@@ -19,13 +19,16 @@ fun main(args: Array<String>) {
 			when (it.optString("type")) {
 				"um" -> {
 					println("UM SUBSCRIBED MESSAGE :: " + it.optString("data"))
-					khttp.post(
-						url  = "http://localhost:" + ctx.environment.getProperty("server.port") + "/api/postEvents/kafka",
-						json = mapOf("data" to it.optString("data")))
+//					khttp.post(
+//						url  = "http://localhost:" + ctx.environment.getProperty("server.port") + "/api/postEvents/kafka",
+//						json = mapOf("data" to it.optString("data")))
 
 				}
 				"kafka" -> {
 					println("KAFKA SUBSCRIBED MESSAGE :: " + it.optString("data"))
+				}
+				"webm" -> {
+					println("WEBM TOPIC SUBSCRIBED MESSAGE :: " + it.optString("data"))
 				}
 			}
 		} catch(e: Exception) {
