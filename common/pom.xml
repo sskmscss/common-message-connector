@@ -17,24 +17,28 @@
 	<properties>
 		<java.version>1.8</java.version>
 		<kotlin.version>1.4.21</kotlin.version>
-		<nirvana.version>10.3.0.2.114959</nirvana.version>
+		<nirvana.version>1.0</nirvana.version>
+
+		<!--		<nirvana.version>10.3.0.2.114959</nirvana.version>-->
 	</properties>
 
 	<repositories>
-		<repository>
-			<id>nexus-commerce-maven-public</id>
-			<url>https://nexus.ah.nl/repository/commerce-maven-public/</url>
-		</repository>
+<!--		<repository>-->
+<!--			<id>nexus-commerce-maven-public</id>-->
+<!--			<url>https://nexus.ah.nl/repository/commerce-maven-public/</url>-->
+<!--		</repository>-->
 	</repositories>
 
 	<dependencies>
 		<dependency>
-			<groupId>com.nirvana</groupId>
+			<groupId>com.pcbsys.nirvana.client</groupId>
+<!--			<groupId>com.nirvana</groupId>-->
 			<artifactId>nJMS</artifactId>
 			<version>${nirvana.version}</version>
 		</dependency>
 		<dependency>
-			<groupId>com.nirvana</groupId>
+			<groupId>com.pcbsys.nirvana.client</groupId>
+			<!--			<groupId>com.nirvana</groupId>-->
 			<artifactId>nClient</artifactId>
 			<version>${nirvana.version}</version>
 		</dependency>

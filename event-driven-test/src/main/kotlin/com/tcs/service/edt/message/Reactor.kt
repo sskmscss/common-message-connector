@@ -22,9 +22,9 @@ class Reactor : MessageListener {
                 json.put("data", payload)
                 RxBus.publish(json)
             }
-            "webm"    ->  {
+            "webmTopic"    ->  {
                 val json= JSONObject()
-                json.put("type", "webm")
+                json.put("type", "webmTopic")
                 json.put("data", payload)
                 RxBus.publish(json)
             }

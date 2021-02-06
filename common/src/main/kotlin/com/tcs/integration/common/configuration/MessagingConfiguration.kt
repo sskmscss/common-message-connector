@@ -3,7 +3,7 @@ package com.tcs.integration.common.configuration
 import com.tcs.integration.common.messageProvider.AbstractMessageProvider
 import com.tcs.integration.common.messageProvider.kafka.KafkaMessageProvider
 import com.tcs.integration.common.messageProvider.um.UMMessageProvider
-import com.tcs.integration.common.messageProvider.webm.WebMethodsTopicProvider
+import com.tcs.integration.common.messageProvider.webmtopic.WebMethodsTopicProvider
 import org.springframework.beans.factory.annotation.Qualifier
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
@@ -29,7 +29,7 @@ class MessagingConfiguration(private val configProperties: ConfigProperties) {
     }
 
     @Bean
-    @Qualifier("webm")
+    @Qualifier("webmTopic")
     fun messageProviderWEBMTOPIC(): AbstractMessageProvider {
         println("WebMethodsTopicProvider")
         return WebMethodsTopicProvider(configProperties)

@@ -1,4 +1,4 @@
-package com.tcs.integration.common.messageProvider.webm
+package com.tcs.integration.common.messageProvider.webmtopic
 
 import com.tcs.integration.common.configuration.ConfigProperties
 import com.tcs.integration.common.messageProvider.AbstractMessageProvider

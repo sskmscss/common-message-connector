@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
 
 @Component
-class WebmTopic(@Qualifier("webmTopic") private val webmTopic: AbstractMessageProvider, private val service: Service, private val reactor: Reactor) {
+class WebmethodsTopic(@Qualifier("webmTopic") private val webmTopic: AbstractMessageProvider, private val service: Service, private val reactor: Reactor) {
     @Value("\${cm.messaging.umtopic}")
     lateinit var topic: String
 

@@ -27,7 +27,7 @@ fun main(args: Array<String>) {
 				"kafka" -> {
 					println("KAFKA SUBSCRIBED MESSAGE :: " + it.optString("data"))
 				}
-				"webm" -> {
+				"webmTopic" -> {
 					println("WEBM TOPIC SUBSCRIBED MESSAGE :: " + it.optString("data"))
 				}
 			}
