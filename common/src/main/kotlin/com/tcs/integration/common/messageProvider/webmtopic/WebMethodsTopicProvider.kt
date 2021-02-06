@@ -2,8 +2,11 @@ package com.tcs.integration.common.messageProvider.webm
 
 import com.tcs.integration.common.configuration.ConfigProperties
 import com.tcs.integration.common.messageProvider.AbstractMessageProvider
+import com.tcs.logging.logger
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.jms.annotation.EnableJms
 import org.springframework.jms.annotation.JmsListener
+import org.springframework.jms.core.JmsTemplate
 import javax.jms.BytesMessage
 import javax.jms.TextMessage
 
@@ -12,6 +15,8 @@ import javax.jms.TextMessage
 class WebMethodsTopicProvider(
         private val configProperties: ConfigProperties
 ) : AbstractMessageProvider()  {
+    @Autowired
+    var topicJmsTemplate: JmsTemplate? = null
 
     @JmsListener(containerFactory = "topicJmsListenerContainerFactory", destination = "\${webmethods.topic.name}")
     override fun receive(payload: Any) {
@@ -34,6 +39,8 @@ class WebMethodsTopicProvider(
     }
 
     override fun sendMessage(destination: String, payload: Any) {
+        logger.info("Sending '{}' to topic - '{}'", payload, destination)
+        topicJmsTemplate!!.convertAndSend(destination, payload)
     }
 
     override fun subscribeMessage(): String {

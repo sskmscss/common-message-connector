@@ -9,7 +9,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.stereotype.Component
 
 @Component
-class WebmTopic(@Qualifier("webm") private val webmTopic: AbstractMessageProvider, private val service: Service, private val reactor: Reactor) {
+class WebmTopic(@Qualifier("webmTopic") private val webmTopic: AbstractMessageProvider, private val service: Service, private val reactor: Reactor) {
     @Value("\${cm.messaging.umtopic}")
     lateinit var topic: String
 
@@ -18,7 +18,7 @@ class WebmTopic(@Qualifier("webm") private val webmTopic: AbstractMessageProvide
     }
 
     fun publishMessage(payload: Any) {
-//        service.publishMessage(um, topic, payload)
+        service.publishMessage(webmTopic, topic, payload)
     }
 
     fun subscribeMessage(type: String): String? {
