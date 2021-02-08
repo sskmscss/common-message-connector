@@ -1,8 +1,5 @@
 package com.tcs.integration.common.messageProvider
 
-import org.apache.kafka.clients.consumer.ConsumerRecord
-import org.springframework.kafka.annotation.KafkaListener
-
 abstract class AbstractMessageProvider {
     var messageListener: MessageListener? = null
        /* get() = messageListener

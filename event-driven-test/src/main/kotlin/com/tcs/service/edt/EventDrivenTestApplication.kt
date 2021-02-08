@@ -13,22 +13,21 @@ class EventDrivenTestApplication
 
 fun main(args: Array<String>) {
 	val ctx: ConfigurableApplicationContext = runApplication<EventDrivenTestApplication>(*args)
-	// Listen for String events only
+
 	RxBus.listen(JSONObject::class.java).subscribe {
 		try {
 			when (it.optString("type")) {
 				"um" -> {
 					println("UM SUBSCRIBED MESSAGE :: " + it.optString("data"))
-//					khttp.post(
-//						url  = "http://localhost:" + ctx.environment.getProperty("server.port") + "/api/postEvents/kafka",
-//						json = mapOf("data" to it.optString("data")))
-
 				}
 				"kafka" -> {
 					println("KAFKA SUBSCRIBED MESSAGE :: " + it.optString("data"))
 				}
 				"webmTopic" -> {
 					println("WEBM TOPIC SUBSCRIBED MESSAGE :: " + it.optString("data"))
+				}
+				"webmQueue" -> {
+					println("WEBM QUEUE SUBSCRIBED MESSAGE :: " + it.optString("data"))
 				}
 			}
 		} catch(e: Exception) {

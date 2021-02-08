@@ -22,4 +22,9 @@ class ConfigProperties() {
     @Lazy
     @ConfigurationProperties("webmethods.jndi.topic")
     fun webMethodsTopicJndiProperties() = WebMethodsJndiProperties()
+
+    @Bean
+    @Lazy
+    @ConfigurationProperties("webmethods.jndi.queue")
+    fun webMethodsQueueJndiProperties() = WebMethodsJndiProperties()
 }

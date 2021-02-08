@@ -1,23 +1,14 @@
 package com.tcs.integration.common.configuration
 
-import com.tcs.integration.common.configuration.WebMethodsJndiProperties
-import com.pcbsys.nirvana.nSpace.NirvanaContext
-import com.tcs.integration.common.messageProvider.AbstractMessageProvider
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty
 import org.springframework.context.annotation.Bean
-import org.springframework.context.annotation.Configuration
 import org.springframework.jms.annotation.EnableJms
-import org.springframework.jms.annotation.JmsListener
 import org.springframework.jms.config.DefaultJmsListenerContainerFactory
 import org.springframework.jms.core.JmsTemplate
 import org.springframework.jndi.JndiObjectFactoryBean
 import org.springframework.stereotype.Component
 import java.util.Properties
-import javax.jms.BytesMessage
 import javax.jms.ConnectionFactory
-import javax.jms.TextMessage
 import javax.naming.Context
 
 @EnableJms

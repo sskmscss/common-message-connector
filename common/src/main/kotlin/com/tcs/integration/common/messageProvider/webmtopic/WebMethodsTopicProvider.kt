@@ -34,8 +34,6 @@ class WebMethodsTopicProvider(
             var messageText = String(data)
             println(messageText)
         }
-        println("LISTENER CALLED")
-
     }
 
     override fun sendMessage(destination: String, payload: Any) {
@@ -46,5 +44,4 @@ class WebMethodsTopicProvider(
     override fun subscribeMessage(): String {
         return ""
     }
-
 }
